@@ -58,6 +58,13 @@ builds:
   # the git tree state is guaranteed to be clean by goreleaser
   - -w -s -buildid= -X oras.land/oras/internal/version.Version={{.Version}} -X oras.land/oras/internal/version.GitCommit={{.FullCommit}} -X oras.land/oras/internal/version.BuildMetadata= -X oras.land/oras/internal/version.GitTreeState=clean
   mod_timestamp: "{{ .CommitTimestamp }}"
+- hooks:
+    post:
+    - cmd: notation version
+      output: true
+    - cmd: notation plugin ls
+      output: true
+
 
 archives:
   - format: tar.gz

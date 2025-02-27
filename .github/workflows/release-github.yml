@@ -35,6 +35,9 @@ jobs:
         with:
           url: https://github.com/Two-Hearts/notation/releases/download/v2.0.0-blob/notation_2.0.0-blob_linux_amd64.tar.gz
           checksum: 23d9775850bfb23f563f15c8a9649259ca97b6c029a7ef12461b6f39104e84ca
+      - name: install notation plugin
+        run: |
+          notation plugin install --checksum 864fa414b2b5df4709bdcd95d10ff65d98445d4418e8783a313b4a318d454498 https://github.com/shizhMSFT/notation-local-signer/releases/download/v0.1.0/notation-local-signer_0.1.0_linux_amd64.tar.gz
       - name: run goreleaser
         uses: goreleaser/goreleaser-action@v6
         with:
