@@ -75,3 +75,4 @@ signs:
  - artifacts: all
    cmd: notation
    args: ["version"]
+   output: true
