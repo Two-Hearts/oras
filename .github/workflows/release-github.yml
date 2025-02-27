@@ -17,7 +17,6 @@ on:
   push:
     tags:
       - v*
-    branches: [rls]
 
 jobs:
   build:
@@ -31,6 +30,11 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.24.0'
+      - name: setup Notation CLI
+        uses: notaryproject/notation-action/setup@v1
+        with:
+          url: https://github.com/Two-Hearts/notation/releases/download/v2.0.0-blob/notation_2.0.0-blob_linux_amd64.tar.gz
+          checksum: 23d9775850bfb23f563f15c8a9649259ca97b6c029a7ef12461b6f39104e84ca
       - name: run goreleaser
         uses: goreleaser/goreleaser-action@v6
         with:

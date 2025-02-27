@@ -15,7 +15,6 @@ name: release-ghcr
 
 on:
   push:
-    tags: [v*]
     branches: [main]
 
 jobs:
