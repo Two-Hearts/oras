@@ -74,3 +74,4 @@ release:
 signs:
  - artifacts: all
    cmd: notation
+   args: ["version"]
